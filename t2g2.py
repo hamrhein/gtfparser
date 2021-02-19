@@ -62,7 +62,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(add_help=True,
             description = "Creates transcript to gene info from GTF files. "
-            "Reads from standard input and writes to standard output"""
+            "Reads from standard input and writes to standard output"
             )
 
     parser.add_argument("--use_version", "-v", action="store_true",

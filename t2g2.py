@@ -13,7 +13,6 @@ class TranscriptGeneMapException(Exception):
 def main(args):
     instream = sys.stdin
     outstream = sys.stdout
-    stderr = sys.stderr
 
     gtf = gtfparse.GtfParse(instream)
 
@@ -62,8 +61,8 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(add_help=True,
-            description = "Creates transcript to gene info from GTF files\n"
-            "\nReads from stadard input and writes to standard output"
+            description = "Creates transcript to gene info from GTF files. "
+            "Reads from standard input and writes to standard output"""
             )
 
     parser.add_argument("--use_version", "-v", action="store_true",
@@ -71,17 +70,21 @@ if __name__ == "__main__":
             )
 
     parser.add_argument("--skip_gene_names", "-s", action="store_true",
-            default=False, help="Do not output gene names")
+            default=False, help="Do not output gene names"
+            )
 
     parser.add_argument("--transcript_vers_field", "-t",
             default="transcript_version",
-            help="Field holding transcript version")
+            help="Field holding transcript version"
+            )
 
     parser.add_argument("--gene_vers_field", "-g",
-            default="gene_version", help="Field holding gene version")
+            default="gene_version", help="Field holding gene version"
+            )
 
     parser.add_argument("--gene_name_field", "-n",
-            default="gene_name", help="Field holding gene name")
+            default="gene_name", help="Field holding gene name"
+            )
 
     args = parser.parse_args()
 
